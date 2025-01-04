@@ -1,4 +1,4 @@
-import { summary } from "@actions/core";
+import { summary, debug } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
 import { env } from "process";
 import { info } from "../utils";
@@ -88,6 +88,16 @@ export async function createGitHubDeploymentAndJobSummary(
 	config: WranglerActionConfig,
 	pagesArtifactFields: OutputEntryPagesDeployment,
 ) {
+	debug(`cond: ${config.GITHUB_TOKEN &&
+		pagesArtifactFields.production_branch &&
+		pagesArtifactFields.pages_project &&
+		pagesArtifactFields.deployment_trigger &&
+		pagesArtifactFields.stages}`)
+	debug(`config.GITHUB_TOKEN: ${config.GITHUB_TOKEN}`)
+	debug(`pagesArtifactFields.production_branch: ${pagesArtifactFields.production_branch}`)
+	debug(`pagesArtifactFields.pages_project: ${pagesArtifactFields.pages_project}`)
+	debug(`pagesArtifactFields.deployment_trigger: ${pagesArtifactFields.deployment_trigger}`)
+	debug(`pagesArtifactFields.stages: ${pagesArtifactFields.stages}`)
 	if (
 		config.GITHUB_TOKEN &&
 		pagesArtifactFields.production_branch &&
