@@ -36902,8 +36902,7 @@ async function createGitHubDeploymentAndJobSummary(config, pagesArtifactFields) 
     (0,core.debug)(`cond: ${config.GITHUB_TOKEN &&
         pagesArtifactFields.production_branch &&
         pagesArtifactFields.pages_project &&
-        pagesArtifactFields.deployment_trigger &&
-        pagesArtifactFields.stages}`);
+        pagesArtifactFields.deployment_trigger}`);
     (0,core.debug)(`config.GITHUB_TOKEN: ${config.GITHUB_TOKEN}`);
     (0,core.debug)(`pagesArtifactFields.production_branch: ${pagesArtifactFields.production_branch}`);
     (0,core.debug)(`pagesArtifactFields.pages_project: ${pagesArtifactFields.pages_project}`);
@@ -36912,8 +36911,7 @@ async function createGitHubDeploymentAndJobSummary(config, pagesArtifactFields) 
     if (config.GITHUB_TOKEN &&
         pagesArtifactFields.production_branch &&
         pagesArtifactFields.pages_project &&
-        pagesArtifactFields.deployment_trigger &&
-        pagesArtifactFields.stages) {
+        pagesArtifactFields.deployment_trigger) {
         const octokit = (0,github.getOctokit)(config.GITHUB_TOKEN);
         await Promise.all([
             createGitHubDeployment({
