@@ -389,6 +389,7 @@ async function wranglerCommands(
 				command.startsWith("pages publish") ||
 				command.startsWith("pages deploy")
 			) {
+				debug(`WRANGLER_OUTPUT_DIR: ${config.WRANGLER_OUTPUT_DIR}`);
 				const pagesArtifactFields = await getDetailedPagesDeployOutput(
 					config.WRANGLER_OUTPUT_DIR,
 				);
